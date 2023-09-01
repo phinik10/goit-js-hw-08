@@ -21,6 +21,7 @@ const createGalleryItem = ({ preview, original, description }) => {
   `;
 };
 
+
 const galleryMarkup = galleryItems.map(createGalleryItem).join('');
 galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
 
