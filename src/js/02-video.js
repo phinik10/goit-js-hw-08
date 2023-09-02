@@ -1,16 +1,16 @@
-
-
+import Player from '@vimeo/player';
+import throttle from 'lodash.throttle';
 
 const iframe = document.querySelector('iframe');
 
 
-const vimeoPlayer = new Vimeo.Player(iframe);
+const Player = new Player(iframe);
 
 
 const LOCAL_STORAGE_KEY = 'vimeo-player-current-time';
 
 
-vimeoPlayer.on('timeupdate', function(data) {
+player.on('timeupdate', function(data) {
 
   const currentTime = data.seconds;
 
@@ -23,8 +23,7 @@ const savedTime = parseFloat(localStorage.getItem(LOCAL_STORAGE_KEY) || '0');
 
 
 vimeoPlayer.setCurrentTime(savedTime).then(function(seconds) {
-  console.log('Відновлення відтворення з часу:', seconds);
+  console.log(seconds);
 });
-
 
 vimeoPlayer.play();
